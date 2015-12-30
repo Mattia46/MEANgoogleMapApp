@@ -1,5 +1,5 @@
-var addController = angular.module('addController', ['geolocation']);
-addController.controller('addController', function($scope, $http, geolocation){
+var addController = angular.module('addController', ['geolocation', 'gservice']);
+addController.controller('addController', function($scope, $http, geolocation, gservice){
 
   $scope.formData = {};
   var coords = {};
@@ -27,6 +27,7 @@ addController.controller('addController', function($scope, $http, geolocation){
       $scope.formData.gender = "";
       $scope.formData.age = "";
       $scope.formData.favlang = "";
+      gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
 
     })
     .error(function (data) {
