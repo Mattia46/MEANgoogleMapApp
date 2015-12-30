@@ -4,8 +4,8 @@ var Schema  = mongoose.Schema;
 var UserSchema = new Schema({
     username: {type: String, required: true},
     gender: {type: String, required: true},
-    favlang: {type: String, required: true},
-    location: {type: [Number], required: true}, // [Long,
+    favlang: {type: String },
+    location: {type: [Number], required: true}, // [Long, Lat]
     htmlverified: String,
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now}
@@ -22,5 +22,4 @@ UserSchema.pre('save', function(next){
 
 UserSchema.index({location: '2dsphere'});
 
-                                 // Export
-module.exports = mongoose.model('scotch-user', UserSchema);
+module.exports = mongoose.model('mattia-user', UserSchema);
