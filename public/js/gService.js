@@ -4,8 +4,8 @@ angular.module('gservice', [])
   var googleMapService = {};
   var locations = [];
 
-  var selectedLat = 39.50;
-  var selectedLong = -98.35;
+  var selectedLat = 45.07;
+  var selectedLong = 7.69;
 
   googleMapService.refresh = function(latitude, longitude){
 
