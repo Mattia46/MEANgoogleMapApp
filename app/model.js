@@ -5,7 +5,7 @@ var UserSchema = new Schema({
     username: {type: String, required: true},
     gender: {type: String, required: true},
     favlang: {type: String },
-    location: {type: [Number], required: true}, // [Long, Lat]
+    location: {type: String, required: true}, // [Long, Lat]
     htmlverified: String,
     created_at: {type: Date, default: Date.now},
     updated_at: {type: Date, default: Date.now}
